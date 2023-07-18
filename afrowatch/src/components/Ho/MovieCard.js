@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-// import styled,{ ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 
-// const Card = styled.div``;
-// const theme = {
-//   // Define your theme properties here
-//   colors: {
-//     primary: 'blue',
-//     secondary: 'green',
-//   },
-// };
+const Card = styled.div`
+ width: 25%;
+  div {
+    backgrounColor: 'black';
+  }
+`;
+
 
 const MovieCard = ({ trailer, picture, title, year }) => {
   const [hovering, setHovering] = useState(false);
@@ -19,7 +18,8 @@ const MovieCard = ({ trailer, picture, title, year }) => {
 
   return (
 
-    <div onMouseEnter={handleHover}>
+    <Card  onMouseEnter={handleHover}>
+      <div>
       {hovering ? (
         <img src={picture} alt="Movie Poster" />
       ) : (
@@ -27,9 +27,10 @@ const MovieCard = ({ trailer, picture, title, year }) => {
           <source src={trailer} type="video/mp4" />
         </video>
       )}
+      </div>
       <h2>{title}</h2>
       <h3>{year}</h3>
-    </div>
+    </Card >
  
   );
 };

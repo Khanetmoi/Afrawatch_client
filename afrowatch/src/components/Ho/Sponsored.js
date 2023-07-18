@@ -1,9 +1,20 @@
 import React from 'react';
-const Sponsored = ()=>{
+import styled from 'styled-components';
+
+const Sponsor = styled.div``;
+
+const Sponsored = ({picture, trailer, title, year})=>{
+
     return (
-        <>
-        <h1>Log In</h1>
-        </>
+        <Sponsor>
+
+        <video width="320" height="240" controls>
+          <source src={trailer} type="video/mp4" />
+        </video>
+      
+      <h2>{title}</h2>
+      <h3>{year}</h3>
+    </Sponsor >
     )
 }
 
