@@ -8,12 +8,19 @@ const Card = styled.div`
   }
 `;
 
+const Frame = styled.div`
+width: 320px;
+height: 240px;
+border: 1px solid red;
+background-color: blue;
+`
+
 
 const MovieCard = ({ trailer, picture, title, year }) => {
-  const [hovering, setHovering] = useState(false);
+  const [hovering, setHovering] = useState(true);
 
   const handleHover = () => {
-    setHovering(true);
+    setHovering(false);
   };
 
   return (
@@ -21,9 +28,9 @@ const MovieCard = ({ trailer, picture, title, year }) => {
     <Card  onMouseEnter={handleHover}>
       <div>
       {hovering ? (
-        <img src={picture} alt="Movie Poster" />
+        <Frame />
       ) : (
-        <video width="320" height="240" controls>
+        <video width="320" height="240">
           <source src={trailer} type="video/mp4" />
         </video>
       )}

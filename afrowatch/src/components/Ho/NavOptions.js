@@ -1,6 +1,15 @@
 import React from 'react';
-// import styled from 'styled-components';
+import styled from 'styled-components';
 
+const List = styled.div`
+display: flex;
+justify-content: space-between;
+
+li {
+  margin-inline: 20px;
+  list-style-type: none;
+}
+`
 
 const NavOptions = ()=>{
    const sortByLikes = ()=>{ console.log("sortBylikes")}
@@ -9,7 +18,7 @@ const NavOptions = ()=>{
    const sortByDate = ()=>{console.log("sortByDates")}
    const Search = ()=>{console.log("Search")}
     return (
-        <ul>
+        <List>
           <li onClick={sortByLikes}>Home</li>
           <li onclick={sortByName}>Movie List</li>
           <li onClick={sortByViews}>Popular</li>
@@ -18,7 +27,7 @@ const NavOptions = ()=>{
             <input type="text"/>
             <button onClick={Search}>search</button>
           </li>
-        </ul>
+        </List>
     )
 }
 

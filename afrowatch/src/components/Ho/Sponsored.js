@@ -1,14 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Sponsor = styled.div``;
+const Sponsor = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+height: 18rem;
+margin-block: 1rem;
+
+  video {
+    height: 100%;
+    width: 100%;
+    border: 2px solid black;
+  }
+`;
 
 const Sponsored = ({picture, trailer, title, year})=>{
 
     return (
         <Sponsor>
 
-        <video width="320" height="240" controls>
+        <video controls>
           <source src={trailer} type="video/mp4" />
         </video>
       
