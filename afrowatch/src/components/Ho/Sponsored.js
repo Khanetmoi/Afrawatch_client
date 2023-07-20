@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
 
 const Sponsor = styled.div`
   display: flex;
@@ -15,17 +17,69 @@ const Sponsor = styled.div`
   }
 `;
 
-const Sponsored = ({picture, trailer, title, year})=>{
+const SCard = styled.div`
+
+`;
+
+const Sponsored = ()=>{
+const sponsoredMovies = [{
+  poster: "./first.jpeg",
+  title: "undestructible",
+  year: 2023,
+  time: 90,
+},
+{
+  poster: "./first.jpeg",
+  title: "understandable",
+  year: 2023,
+  time: 90,
+},
+{
+  poster: "./first.jpeg",
+  title: "undesconstructable",
+  year: 2023,
+  time: 90,
+},
+{
+  poster: "./first.jpeg",
+  title: "unfantomable",
+  year: 2023,
+  time: 90,
+},
+{
+  poster: "./first.jpeg",
+  title: "irepressible",
+  year: 2023,
+  time: 90,
+},
+{
+  poster: "./first.jpeg",
+  title: "Govinda",
+  year: 2023,
+  time: 90,
+}
+]
 
   return (
-    <Sponsor>
-      <video controls>
-        <source src={trailer} type="video/mp4" />
-      </video>
-      
-      <h2>{title}</h2>
-      <h3>{year}</h3>
-    </Sponsor >
+    <Sponsored>
+    <Splide options={ { rewind: true } } aria-label="React Splide Example">
+    <SplideSlide>
+     {
+      sponsoredMovies.map(()=>{
+        <SCard>
+          <div>
+            <img src={sponsoredMovies.poster}/>
+            <button>Play</button>
+          </div>
+          <h2>{sponsoredMovies.title}</h2>
+          <h3>{sponsoredMovies.year} . {sponsoredMovies.time} mn</h3>
+        </SCard>
+      })
+     }
+    </SplideSlide>
+    </Splide>
+    </Sponsored >
+    
   )
 }
 

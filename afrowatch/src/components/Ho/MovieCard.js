@@ -2,17 +2,20 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Card = styled.div`
-  width: 25%;
+width: 23%;
+margin: 1.5%;
   div {
-    backgrounColor: 'black';
+    position: relative;
+    
+    height: 20rem;
+     background-color: yellow;
+      
+    button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
   }
-`;
-
-const Frame = styled.div`
-  width: 320px;
-  height: 240px;
-  border: 1px solid red;
-  background-color: blue;
 `;
 
 const MovieCard = ({ trailer, picture, title, year }) => {
@@ -26,18 +29,12 @@ const MovieCard = ({ trailer, picture, title, year }) => {
 
     <Card onMouseEnter={handleHover}>
       <div>
-        {hovering ? (
-            <Frame />
-          ) : (
-            <video width="320" height="240">
-              <source src={trailer} type="video/mp4" />
-            </video>
-          )
-        }
+        <img src={picture}/>
+        <button>Play</button>
       </div>
 
       <h2>{title}</h2>
-      <h3>{year}</h3>
+      <h3>{year} . {60} mn</h3>
 
     </Card >
  
